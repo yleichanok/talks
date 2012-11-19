@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<!--
+    Google HTML5 slide template
+    
+    Authors: Luke Mahe (code)
+             Marcin Wichary (code and design)
+             
+             Dominic Mazzoni (browser compatibility)
+             Charles Chen (ChromeVox support)
+    
+    URL: http://code.google.com/p/html5slides/
+    -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Using jQuery</title>
+        <link rel="stylesheet" type="text/css" href="lib/styles.css">
+    </head>
+    <body style="display: none;">
+        <section class="slides layout-regular template-io2011">
+            <article>
+                <img src="files/jquery-logo.png" alt="jQuery" />
+                <h1>Using jQuery</h1>
+                <p>Yauheni Leichanok</p>
+                <p>October 19, 2012</p>
+            </article>
+            <article>
+                <ul>
+                    <li>What is jQuery?</li>
+                    <li>DOM. Selectors. Performance. Sizzle</li>
+                    <li>Working with elements. Parent, parents, closest, find, children, filter</li>
+                    <li>Events</li>
+                    <li>Ajax</li>
+                    <li>Tips and tricks</li>
+                </ul>
+            </article>
+            <article>
+                <h3>A bit of history</h3>
+                <ul>
+                    <li>1995 - LiveScript</li>
+                    <li>1996 - MS IE 3.0</li>
+                    <li>1998 - EcmaScript</li>
+                </ul>
+            </article>
+            <article>
+                <h3>Browser wars</h3>
+                <ul>
+                    <li>Netscape - Microsoft</li>
+                    <li>JavaScript - JScript</li>
+                    <li>Proprietary technologies</li>
+                </ul>
+                <br />
+                <p>2001 - MS IE 6.0</p>
+                <img src="files/browser-wars.jpg" alt="" width="350" class="article-help" />
+            </article>
+            <article>
+                <h3>DOM</h3>
+                <p>If there is a DOM method - there is a problem with it (C) John Resig</p>
+                <ul>
+                    <li><code>getElementById</code> (problem with name)</li>
+                    <li><code>getElementsByTagName</code> (problem with * and object)</li>
+                    <li><code>getElementsByClassName</code> (problem with support and several classes)</li>
+                    <li><code>querySelectorAll</code> (problem with support and syntax)</li>
+                </ul>
+                <img src="files/why-you-no.jpg" alt="" width="150" class="article-help" />
+            </article>
+            <article>
+                <h3>jQuery!!!</h3>
+                <ul>
+                    <li>Selectors engine (Sizzle), tree traversal</li>
+                    <li>Events</li>
+                    <li>Visual effects and animation</li>
+                    <li>AJAX-extensions</li>
+                    <li>Plugins</li>
+                </ul>
+                <img src="files/chuck-norris-approved.jpg" alt="" width="250" class="article-help" />
+            </article>
+            <article>
+                <h3>DOM & Sizzle</h3>
+                <p>Based on DOM API, realization depends on support of base methods.</p>
+                <p>Selectors are parsed from right to left.</p>
+                <section>
+                    <pre>
+$('#id > div.className:first[data-id="42"] + a[href~="localhost"]');</pre>
+                </section>
+                <img src="files/sizzle.jpg" alt="" width="200" class="article-help" />
+            </article>
+            <article>
+                <h3>Simple selectors</h3>
+                <p>Use methods from DOM API.</p>
+                <ul>
+                    <li><code>$('#id') - getElementById</code></li>
+                    <li><code>$('div') - getElementsByTagName</code></li>
+                    <li><code>$('.className') - getElementsByClassName</code></li>
+                </ul>
+            </article>
+			<article>
+				<h3>From our projects:)</h3>
+				<section>
+					<pre>
+// 1
+var id = 'test';
+$('div[id=' + id + ']');
+
+// 2
+$('.myclass input #results:eq(0)');
+
+// 3
+$('div#id');
+
+// 4
+$("#content.fan form.status .validation-summary-valid ul");</pre>
+				</section>
+			</article>
+            <article>
+                <h3>Context</h3>
+                <p>Increases performance during elements search, using previous selected element. Pass the second parameter to $(...).</p>
+                <section>
+                    <pre>
+var context = $('#id .className');
+$('.anotherClassName', context).show();</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Selectors</h3>
+                <p>Use document.querySelectorAll(), if the method exists.</p>
+                <p>If not - Sizzle parses the selector and search for elements from right to left.</p>
+                <section>
+                    <pre>
+$('.className div > p');</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Tips</h3>
+                <ul>
+                    <li>1. Start with id - <code>$('#id ...')</code></li>
+                    <li>2. Use context - <code>$('...', $('#id'))</code></li>
+                    <li>3. Be careful with pseudoclasses - <code>:first, :not, :contains</code> etc.</li>
+                    <li><span class="red">4. Cache!</span></li>
+                </ul>
+                <section>
+                    <pre>
+var el = $('#id .className');
+el.css('color', 'red');
+el.show();
+el.click(function() {});</pre>
+                </section>
+            </article>
+            <article>
+                <h1>http://jsperf.com/</h1>
+                <img src="files/like-a-boss.jpg" alt="" width="200" class="article-help" />
+            </article>
+            <article>
+                <h3>Need a custom selector?</h3>
+                <section>
+                    <pre>
+$.extend($.expr[':'], {
+    over100pixels: function(el) {
+        return $(el).height() > 100;
+    }
+});
+
+$('.box:over100pixels').click(function() {
+    // do something
+});</pre>
+                </section>
+                <img src="files/tools.png" alt="" width="150" class="article-help" />
+            </article>
+            <article>
+                <h3>Tree traversal</h3>
+                <ul>
+                    <li><code>parent(), parents(), parentsUntil('selector')</code></li>
+                    <li><code>closest('selector')</code></li>
+                    <li><code>find('selector')</code></li>
+                    <li><code>children('selector')</code></li>
+                    <li><code>filter('selector')</code></li>
+                    <li><code>siblings('selector')</code></li>
+                </ul>
+            </article>
+            <article>
+                <h3>Methods chaining</h3>
+                <section>
+                    <pre>
+$('#id')
+    .find('.className').hide().end()
+    .find('.anotherClassName').show();</pre>
+                </section>
+                <img src="files/chain.jpg" alt="" width="300" class="article-help" />
+            </article>
+            <article>
+                <h3>Helpers</h3>
+                <section>
+                    <pre>
+$('#id').data('order', '1'); // save state
+$('#id').is(':checked'); // check for smth
+
+$('#id').clone(); // clone html element
+$.extend(true, {}, obj); // clone object
+
+$('#id').toggleClass('className'); // add or remove class
+$('#id').slideToggle(); // slide up or slide down
+
+$('#id').position(); // calculate position relatively
+$('#id').offset(); // calculate position in the document</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Events</h3>
+                <p>http://www.quirksmode.org/dom/events/</p>
+                <ul>
+                    <li><code>&lt;a href="#" onclick="doSomething();"&gt;Go&lt;/a&gt;</code></li>
+                    <li><code>element.onclick = doSomething;</code></li>
+                    <li><code>element.addEventListener('click', doSomething, false);</code></li>
+                    <li><code>element.attachEvent('onclick', doSomething);</code></li>
+                </ul>
+            </article>
+            <article>
+                <h3>DOM ready</h3>
+                <p>Executes, when the DOM is fully loaded.</p>
+                <section>
+                    <pre>
+$(document).ready(function() {});
+$(function() {});
+
+jQuery(function($) {});</pre>
+                </section>
+                <p><span class="red">Important!</span> Append your css files before scripts.</p>
+            </article>
+            <article>
+                <h3>Events handling</h3>
+                <ul>
+                    <li><code>bind, unbind</code></li>
+                    <li><code>live, die</code></li>
+                    <li><code>delegate, undelegate</code></li>
+                </ul>
+            </article>
+            <article>
+                <h3>Events handling</h3>
+                <section>
+                    <pre>
+$('#id').on('click', function() {});
+
+// bad
+$('#table tr').on('mouseover mouseleave', function(event) {});
+
+// good
+$('#table').on('mouseenter mouseleave', 'tr', function(event) {});</pre>
+                </section>
+                <img src="files/on-off-switch.jpg" alt="" width="250" class="article-help" />
+            </article>
+            <article>
+                <h3>Namespaces</h3>
+                <section>
+                    <pre>
+$('#id')
+    .on('click.myPlugin', function() {})
+    .on('keypress.myPlugin', function() {});
+
+$('#id').off('.myPlugin');</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Shortcuts</h3>
+                <p>Exist for almost all events.</p>
+                <section>
+                    <pre>
+// = $('#id').on('click', function() {});
+$('#id').click(function() {});
+
+// = $('#id').trigger('click');
+$('#id').click();</pre>
+                </section>
+				<section>
+					<pre>
+$('#id').hover(function() {}, function() {});</pre>
+				</section>
+            </article>
+            <article>
+                <h3>AJAX</h3>
+                <ul>
+                    <li><code>$.ajax({});</code> - base method</li>
+                    <li><code>$.get('');</code></li>
+                    <li><code>$.post('');</code></li>
+                </ul>
+                <img src="files/ajax.jpg" alt="" width="250" class="article-help" />
+            </article>
+            <article>
+                <h3>AJAX events</h3>
+                <section>
+                    <pre>
+$("#loading").on("ajaxSend", function(){
+    $(this).show();
+}).on("ajaxComplete", function(){
+    $(this).hide();
+});</pre>
+                </section>
+                <img src="files/events.png" alt="" width="790" />
+            </article>
+            <article>
+                <h3>JSONP</h3>
+                <p>jQuery allows performing cross-domain requests.</p>
+                <section>
+                    <pre>
+$.getJSON('url?callback=?', {}, function() {});
+
+$.ajax({
+    type: 'GET',
+    url: 'url',
+    dataType: 'jsonp',
+    data: {},
+    success: function() {}
+});</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Deferreds</h3>
+                <p>Allows to assign callback functins for a task that may not complete immediately.</p>
+                <section>
+                    <pre>
+// bad
+$.get('first_url', function(firstResponse) {
+    $.get('second_url', function(secondResponse) {
+        // do something
+    });
+});
+
+// better
+$.when($.get('first_url'), $.get('second_url'))
+ .then(function(firstResponse, secondResponse) {
+   // do something 
+});</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Plugins</h3>
+                <p>http://docs.jquery.com/Plugins/Authoring</p>
+                <section>
+                    <pre>
+$.fn.toggable = function() {
+    var el = $(this);
+    el.click(function() {
+        el.toggleClass('active');
+    });
+};
+
+$('#id').toggable();</pre>
+                </section>
+            </article>
+            <article>
+                <h3>Finally</h3>
+                <ul>
+                    <li>Write nice selectors and cache them</li>
+                    <li>Do not touch the DOM too much</li>
+                    <li>Use id, if possible</li>
+                    <li>Delegate events</li>
+                    <li>Use namespaces</li>
+                    <li>Use shortcust</li>
+                    <li>Write your own plugins</li>
+                    <li>Ask questions:)</li>
+                </ul>
+            </article>
+            <article>
+                <h1>Thanks!</h1>
+                <ul>
+                    <li>email: <a href="mailto:e.leychenok@gmail.com">e.leychenok@gmail.com</a></li>
+                    <li>skype: <a href="callto://e.leychenok">e.leychenok</a></li>
+                    <li>twitter: <a href="https://twitter.com/yleichanok">https://twitter.com/yleichanok</a></li>
+                </ul>
+                <img src="files/yoda.jpg" alt="" width="225" class="article-help" />
+            </article>
+        </section>
+        <script src="lib/slides.js"></script>
+        <script src="lib/prettify.js"></script>
+    </body>
+</html>
