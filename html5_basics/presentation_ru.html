@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Основы HTML5</title>
+
+		<meta name="description" content="Тренинг по основам HTML5">
+		<meta name="author" content="Евгений Лейченок">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h1>Основы HTML5</h1>
+					<h3>
+						<img src="files/html5_rocks.png" alt="">
+					</h3>
+					<p>
+						<small>Евгений Лейченок, 10 ноября 2012</small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Всё идёт по плану!</h2>
+					<ul>
+						<li>Немного истории</li>
+						<li>Цели и задачи HTML5</li>
+						<li>Синтаксис, доктайп. Новая разметка</li>
+						<li>Новые input-ы и атрибуты для них</li>
+						<li>Audio, video, canvas</li>
+						<li>Microdata, ARIA</li>
+						<li>Новые плюшки CSS3</li>
+						<li>Препроцессоры</li>
+						<li>JS APIs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>История</h2>
+					<p>1991 - HTML</p>
+					<p>1995 - HTML 2</p>
+					<p>1996 - CSS, Javascript</p>
+					<p>1997 - HTML 4</p>
+					<p>1998 - CSS 2</p>
+					<p>1999 - HTML 4.01</p>
+					<p>2000 - XHTML 1.0</p>
+					<p>2005 - AJAX</p>
+					<p>2009 - HTML 5</p>
+				</section>
+
+				<section>
+					<h2>История</h2>
+					<p>
+						<i>W3C</i> &gt; XHTML 2.0
+					</p>
+					<p class="fragment"><i>WHATWG</i> &gt; HTML 5</p>
+				</section>
+
+				<section>
+					<h2>Принципы</h2>
+					<p>
+						<a href="http://www.w3.org/TR/html-design-principles/">http://www.w3.org/TR/html-design-principles/</a>
+					</p>
+					<ul>
+						<li>Do not break the web!</li>
+						<li>Support existing content</li>
+						<li>Do not reinvent the wheel</li>
+						<li>Secure by design</li>
+						<li>Media independence</li>
+						<li>Accessibility</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Составные части</h2>
+						<p>
+							<a href="https://developer.mozilla.org/en-US/docs/HTML/HTML5">https://developer.mozilla.org/en-US/docs/HTML/HTML5</a>
+						</p>
+					</section>
+					<section>
+						<h2>Semantics & Markup</h2>
+						<ul>
+							<li>Новые тэги для семантичной вёрстки</li>
+							<li>Поля ввода данных</li>
+							<li>Новые атрибуты</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Connectivity</h2>
+						<ul>
+							<li>Web Sockets</li>
+							<li>Server-sent events</li>
+							<li>WebRTC</li>
+							<li>Notifications</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Offline & Storage</h2>
+						<ul>
+							<li>Appcache</li>
+							<li>Local Storage</li>
+							<li>IndexedDB</li>
+							<li>WebSQL</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Multimedia & Graphics</h2>
+						<ul>
+							<li>Audio и Video</li>
+							<li>Canvas</li>
+							<li>WebGL</li>
+							<li>SVG</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Performance & Integration</h2>
+						<ul>
+							<li>Web Workers</li>
+							<li>History API</li>
+							<li>Drag & drop</li>
+							<li>Fullscreen API</li>
+							<li>Pointer Lock API</li>
+						</ul>
+					</section>
+					<section>
+						<h2>File & Device Access</h2>
+						<ul>
+							<li>Camera API</li>
+							<li>Geolocation</li>
+							<li>Touch events, device orientation</li>
+							<li>File API</li>
+						</ul>
+					</section>
+					<section>
+						<h2>CSS3</h2>
+						<ul>
+							<li>Borders, backgrounds, shadows</li>
+							<li>Анимация</li>
+							<li>Типографика</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Semantics & Markup</h2>
+					<p>&lt;!doctype html&gt;</p>
+					<p class="fragment">&lt;meta charset=utf-8&gt;</p>
+					<pre class="fragment"><code style="font-size: 20px; margin-top: 20px;">&lt;!doctype html&gt;
+&lt;meta charset=utf-8&gt;
+&lt;title&gt;My awesome page&lt;/title&gt;
+&lt;div&gt;My awesome content...&lt;/div&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>Классы и id</h2>
+					<p>
+						Классы: 
+						<i class="fragment">footer, </i><i class="fragment">menu, </i><i class="fragment">style1</i>
+					</p>
+					<p class="fragment">
+						id: <i class="fragment">footer, </i><i class="fragment">content, </i><i class="fragment">header</i>
+					</p>
+					<p class="fragment">msonormal, text, table1, table2, autonumber1...</p>
+				</section>
+
+				<section>
+					<h2>Шаблон</h2>
+					<img src="files/layout.png" alt="">
+				</section>
+
+				<section>
+					<h2>Шаблон</h2>
+					<pre><code style="font-size: 20px; margin-top: 20px;">&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div id="sidebar"&gt;&lt;/div&gt;
+&lt;div class="post"&gt;&lt;/div&gt;
+&lt;div class="post"&gt;&lt;/div&gt;
+&lt;div id="footer"&gt;&lt;/div&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>HTML5 шаблон</h2>
+					<pre><code style="font-size: 20px; margin-top: 20px;">&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;article&gt;&lt;article&gt;
+&lt;article&gt;&lt;article&gt;
+&lt;footer&gt;&lt;footer&gt;</code></pre>
+				</section>
+
+				<section>
+					<h2>HTML5 шаблон</h2>
+					<pre><code style="font-size: 20px; margin-top: 20px;">&lt;header&gt;&lt;h1&gt;My awesome template&lt;/h1&gt;&lt;/header&gt;
+&lt;nav&gt;
+	&lt;h2&gt;Menu&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Home&lt;/li&gt;
+		&lt;li&gt;About&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;article&gt;
+	&lt;h3&gt;First article&lt;/h3&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;article&gt;
+&lt;article&gt;
+	&lt;h3&gt;Second article&lt;/h3&gt;
+	&lt;div&gt;&lt;/div&gt;
+&lt;article&gt;
+&lt;footer&gt;&lt;footer&gt;</code></pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Тэги</h2>
+						<p>header, hgroup, nav, footer, aside, section, article, time, details, figure</p>
+					</section>
+					<section>
+						<h2>hgroup</h2>
+						<pre><code style="font-size: 20px; margin-top: 20px;">&lt;hgroup&gt;
+	&lt;h1&gt;Header&lt;/h1&gt;
+	&lt;h2&gt;Slogan&lt;/h2&gt;
+&lt;/hgroup&gt;</code></pre>
+					</section>
+					<section>
+						<h2>nav</h2>
+						<pre><code style="font-size: 20px; margin-top: 20px;">&lt;nav&gt;
+	&lt;ul&gt;
+		&lt;li&gt;...&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav&gt;
+	&lt;p&gt;...&lt;/p&gt;
+	&lt;p&gt;...&lt;/p&gt;
+&lt;/nav&gt;</code></pre>
+					</section>
+					<section>
+						<h2>section, article</h2>
+						<pre><code style="font-size: 20px; margin-top: 20px;">&lt;article&gt;
+	&lt;h3&gt;Title&lt;/h3&gt;
+	&lt;p&gt;Content...&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;section&gt;
+	&lt;h2&gt;Title&lt;/h2&gt;
+	&lt;article&gt;...&lt;/article&gt;
+&lt;/section&gt;</code></pre>
+					</section>
+					<section>
+						<h2>figure</h2>
+						<pre><code style="font-size: 20px; margin-top: 20px;">&lt;figure&gt;
+	&lt;img src="" alt=""&gt;
+	&lt;figcaption&gt;Description&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+	&lt;blockquote&gt;Blockquote&lt;/blockquote&gt;
+	&lt;figcaption&gt;Description&lt;/figcaption&gt;
+&lt;/figure&gt;
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>А что с IE?</h2>
+					<p>document.createElement('header');</p>
+					<p>document.createElement('footer');</p>
+					<p>...</p>
+					<p><a href="https://github.com/aFarkas/html5shiv/">https://github.com/aFarkas/html5shiv/</a></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Forms</h2>
+						<ul>
+							<li>search</li>
+							<li>tel</li>
+							<li>url</li>
+							<li>email</li>
+							<li>datetime</li>
+							<li>date</li>
+							<li>month</li>
+							<li>week</li>
+							<li>time</li>
+							<li>datetime-local</li>
+							<li>number</li>
+							<li>range</li>
+							<li>color</li>
+						</ul>
+					</section>
+					<section>
+						<h2>tel</h2>
+						<img src="files/tel-iphone.png" alt="">
+					</section>
+					<section>
+						<h2>url</h2>
+						<img src="files/url-iphone.png" alt="">
+					</section>
+				</section>
+
+				<section>
+					
+				</section>
+
+				<section>
+					<h1>Спасибо!</h1>
+					<h3>Задаём вопросы</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
