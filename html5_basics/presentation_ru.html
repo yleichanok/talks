@@ -568,6 +568,17 @@ worker.postMessage('');</code></pre>
                 </section>
 
                 <section>
+                    <h2>Web Sockets</h2>
+                    <pre><code>var socket = new WebSocket('ws://url');
+socket.onopen = function(event) {
+    socket.send('Oppa Gangnam Style!');
+};
+socket.onmessage = function(event) { alert(event.data); }
+socket.onclose = function(event) { alert('Oppa...'); }</code></pre>
+                    <p>Поддержка: IE10+, FF4+, Chrome4+, Safari5+, Opera10.7+</p>
+                </section>
+
+                <section>
                     <h1>Спасибо!</h1>
                     <h3>Задаём вопросы</h3>
                     <p>email: <a href="mailto:e.leychenok@gmail.com">e.leychenok@gmail.com</a></p>
