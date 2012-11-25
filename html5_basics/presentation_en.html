@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>HTML5 Basics</title>
+
+        <meta name="description" content="HTML5 Basics workshop">
+        <meta name="author" content="Yauheni Leichanok">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                    <h1>HTML5 Basics</h1>
+                    <h3>
+                        <img src="files/html5_rocks.png" alt="">
+                    </h3>
+                    <p>
+                        <small>Yauheni Leichanok, November 26, 2012</small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>It's about the plan!</h2>
+                    <ul>
+                        <li>A bit of history</li>
+                        <li>Purposes of HTML5</li>
+                        <li>Syntax, doctype. New markup</li>
+                        <li>New inputs and attributes</li>
+                        <li>Audio, video, canvas</li>
+                        <li>New features of CSS3</li>
+                        <li>JS APIs</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>A bit of history</h2>
+                    <p>1991 - HTML</p>
+                    <p>1995 - HTML 2</p>
+                    <p>1996 - CSS, Javascript</p>
+                    <p>1997 - HTML 4</p>
+                    <p>1998 - CSS 2</p>
+                    <p>1999 - HTML 4.01</p>
+                    <p>2000 - XHTML 1.0</p>
+                    <p>2005 - AJAX</p>
+                    <p>2009 - HTML 5</p>
+                </section>
+
+                <section>
+                    <h2>A bit of history</h2>
+                    <p>
+                        <i>W3C</i> &gt; XHTML 2.0
+                    </p>
+                    <p class="fragment"><i>WHATWG</i> &gt; HTML 5</p>
+                </section>
+
+                <section>
+                    <h2>Principles</h2>
+                    <p>
+                        <a href="http://www.w3.org/TR/html-design-principles/">http://www.w3.org/TR/html-design-principles/</a>
+                    </p>
+                    <ul>
+                        <li>Do not break the web!</li>
+                        <li>Support existing content</li>
+                        <li>Do not reinvent the wheel</li>
+                        <li>Secure by design</li>
+                        <li>Media independence</li>
+                        <li>Accessibility</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Parts</h2>
+                        <p>
+                            <a href="https://developer.mozilla.org/en-US/docs/HTML/HTML5">https://developer.mozilla.org/en-US/docs/HTML/HTML5</a>
+                        </p>
+                        <img src="files/rubic.png" alt="">
+                    </section>
+                    <section>
+                        <h2>Semantics & Markup</h2>
+                        <ul>
+                            <li>New tags for semantic markup</li>
+                            <li>New inputs</li>
+                            <li>New attributes</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Connectivity</h2>
+                        <ul>
+                            <li>Web Sockets</li>
+                            <li>Server-sent events</li>
+                            <li>WebRTC</li>
+                            <li>Notifications</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Offline & Storage</h2>
+                        <ul>
+                            <li>Appcache</li>
+                            <li>Local Storage</li>
+                            <li>IndexedDB</li>
+                            <li>WebSQL</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Multimedia & Graphics</h2>
+                        <ul>
+                            <li>Audio и Video</li>
+                            <li>Canvas</li>
+                            <li>WebGL</li>
+                            <li>SVG</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Performance & Integration</h2>
+                        <ul>
+                            <li>Web Workers</li>
+                            <li>History API</li>
+                            <li>Drag & drop</li>
+                            <li>Fullscreen API</li>
+                            <li>Pointer Lock API</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>File & Device Access</h2>
+                        <ul>
+                            <li>Camera API</li>
+                            <li>Geolocation</li>
+                            <li>Touch events, device orientation</li>
+                            <li>File API</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>CSS3</h2>
+                        <ul>
+                            <li>Borders, backgrounds, shadows</li>
+                            <li>Animation</li>
+                            <li>Typographics</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Semantics & Markup</h2>
+                    <p>&lt;!doctype html&gt;</p>
+                    <p class="fragment">&lt;meta charset=utf-8&gt;</p>
+                    <pre class="fragment"><code>&lt;!doctype html&gt;
+&lt;meta charset=utf-8&gt;
+&lt;title&gt;My awesome page&lt;/title&gt;
+&lt;div&gt;My awesome content...&lt;/div&gt;</code></pre>
+                </section>
+
+                <section>
+                    <h2>Classes and ids</h2>
+                    <p>
+                        Classes: 
+                        <i class="fragment">footer, </i><i class="fragment">menu, </i><i class="fragment">style1</i>
+                    </p>
+                    <p class="fragment">
+                        Ids: <i class="fragment">footer, </i><i class="fragment">content, </i><i class="fragment">header</i>
+                    </p>
+                    <p class="fragment">msonormal, text, table1, table2, autonumber1...</p>
+                </section>
+
+                <section>
+                    <h2>Layout</h2>
+                    <img src="files/layout.png" alt="">
+                </section>
+
+                <section>
+                    <h2>Layout</h2>
+                    <pre><code>&lt;div id="header"&gt;&lt;/div&gt;
+&lt;div id="sidebar"&gt;&lt;/div&gt;
+&lt;div class="post"&gt;&lt;/div&gt;
+&lt;div class="post"&gt;&lt;/div&gt;
+&lt;div id="footer"&gt;&lt;/div&gt;</code></pre>
+                </section>
+
+                <section>
+                    <h2>HTML5 Layout</h2>
+                    <pre><code>&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;article&gt;&lt;article&gt;
+&lt;article&gt;&lt;article&gt;
+&lt;footer&gt;&lt;footer&gt;</code></pre>
+                    <img src="files/done.jpg" alt="" class="fragment">
+                </section>
+
+                <section>
+                    <h2>HTML5 Layout</h2>
+                    <pre><code>&lt;header&gt;&lt;h1&gt;My awesome template&lt;/h1&gt;&lt;/header&gt;
+&lt;nav&gt;
+    &lt;h2&gt;Menu&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;li&gt;Home&lt;/li&gt;
+        &lt;li&gt;About&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;article&gt;
+    &lt;h3&gt;First article&lt;/h3&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;article&gt;
+&lt;article&gt;
+    &lt;h3&gt;Second article&lt;/h3&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;article&gt;
+&lt;footer&gt;&lt;footer&gt;</code></pre>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Tags</h2>
+                        <p>header, hgroup, nav, footer, aside, section, article, time, details, figure</p>
+                    </section>
+                    <section>
+                        <h2>hgroup</h2>
+                        <img src="files/hgroup.jpg" alt="">
+                        <pre><code>&lt;hgroup&gt;
+    &lt;h1&gt;Header&lt;/h1&gt;
+    &lt;h2&gt;Slogan&lt;/h2&gt;
+&lt;/hgroup&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>nav</h2>
+                        <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;...&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;nav&gt;
+    &lt;p&gt;...&lt;/p&gt;
+    &lt;p&gt;...&lt;/p&gt;
+&lt;/nav&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>section, article</h2>
+                        <pre><code>&lt;article&gt;
+    &lt;h3&gt;Title&lt;/h3&gt;
+    &lt;p&gt;Content...&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;section&gt;
+    &lt;h2&gt;Title&lt;/h2&gt;
+    &lt;article&gt;...&lt;/article&gt;
+&lt;/section&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>figure</h2>
+                        <img src="files/figure.png" alt="">
+                        <pre><code>&lt;figure&gt;
+    &lt;img src="" alt=""&gt;
+    &lt;figcaption&gt;Description&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+    &lt;blockquote&gt;Blockquote&lt;/blockquote&gt;
+    &lt;figcaption&gt;Description&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>How about IE?</h2>
+                    <p>document.createElement('header');</p>
+                    <p>document.createElement('footer');</p>
+                    <p>...</p>
+                    <p><a href="https://github.com/aFarkas/html5shiv/">https://github.com/aFarkas/html5shiv/</a></p>
+                    <img src="files/ie.jpg" alt="">
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Forms</h2>
+                        <ul>
+                            <li>search</li>
+                            <li>tel</li>
+                            <li>url</li>
+                            <li>email</li>
+                            <li>datetime</li>
+                            <li>date</li>
+                            <li>month</li>
+                            <li>week</li>
+                            <li>time</li>
+                            <li>datetime-local</li>
+                            <li>number</li>
+                            <li>range</li>
+                            <li>color</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>date</h2>
+                        <img src="files/date.png" alt="">
+                    </section>
+                    <section>
+                        <h2>tel</h2>
+                        <img src="files/tel-iphone.png" alt="">
+                    </section>
+                    <section>
+                        <h2>url</h2>
+                        <img src="files/url-iphone.png" alt="">
+                    </section>
+                    <section>
+                        <h2>Test page</h2>
+                        <a href="http://robertnyman.com/html5/forms/input-types.html">http://robertnyman.com/html5/forms/input-types.html</a>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Attributes</h2>
+                        <ul>
+                            <li>autocomplete, novalidate</li>
+                            <li>form, formaction, formenctype, formmethod, formnovalidate, formtarget</li>
+                            <li>height, width</li>
+                            <li>autocomplete</li>
+                            <li>autofocus</li>
+                            <li>list</li>
+                            <li>min, max, step</li>
+                            <li>multiple</li>
+                            <li>pattern</li>
+                            <li>placeholder</li>
+                            <li>required</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>A few samples</h2>
+                        <img src="files/placeholder.png" alt="">
+                        <pre><code>&lt;form&gt;
+    &lt;input type="text" placeholder="I will dissapear when you click me"&gt;
+&lt;/form&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>A few samples</h2>
+                        <img src="files/list.png" alt="">
+                        <pre><code>&lt;form&gt;
+    &lt;input type="text" list="browsers"&gt;
+    &lt;datalist id="browsers"&gt;
+        &lt;option value="Firefox"&gt;
+        &lt;option value="Chrome"&gt;
+        &lt;option value="Opera"&gt;
+        &lt;option value="Safari"&gt;
+    &lt;/datalist&gt;
+&lt;/form&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>A few samples</h2>
+                        <img src="files/require.png" alt="">
+                        <pre><code>&lt;form&gt;
+    &lt;input type="text" required&gt;
+&lt;/form&gt;</code></pre>
+                    </section>
+                    <section>
+                        <h2>A few samples</h2>
+                        <a href="http://www.w3schools.com/html/html5_form_attributes.asp">http://www.w3schools.com/html/html5_form_attributes.asp</a>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>Flash vs. HTML5</h2>
+                    <img src="files/flashvshtml5.jpg" alt="">
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Video, audio</h2>
+                        <pre><code>&lt;video poster="image.jpg" controls autoplay preload loop&gt;
+    &lt;source src="movie.mp4" type="video/mp4"&gt;
+    &lt;source src="movie.ogg" type="video/ogg" media="screen and (min-width:320px)"&gt;
+    Your browser does not support the video tag.
+&lt;/video&gt;</code></pre>
+                        <video width="390" controls>
+                            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" src="files/chrome_japan.webm"></source>
+                            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="files/chrome_japan.mp4"></source>
+                            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="files/chrome_japan.ogv"></source>
+                            Your browser does not support the video tag.
+                        </video>
+                    </section>
+                    <section>
+                        <h2>API</h2>
+                        <a href="http://www.w3.org/2010/05/video/mediaevents.html">http://www.w3.org/2010/05/video/mediaevents.html</a>
+                        <ul>
+                            <li>Methods: load(), play(), pause()</li>
+                            <li>Events: canplay, play, pause, seeking, error, volumechange, etc.</li>
+                            <li>Properties: currentTime, volume, videoTracks, currentSrc, duration, etc.</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Canvas</h2>
+                        <pre><code>var canvas = document.getElementById('sample');
+var context = canvas.getContext('2d');
+context.fillStyle = '#FF0000';
+context.fillRect(0, 0, 150, 75);</code></pre>
+                    </section>
+                    <section>
+                        <h2>Canvas</h2>
+                        <p><a href="http://alteredqualia.com/canvasmol/#DNA">http://alteredqualia.com/canvasmol/#DNA</a></p>
+                        <p><a href="http://sta.sh/muro/">http://sta.sh/muro/</a></p>
+                        <p><a href="http://lights.elliegoulding.com/">http://lights.elliegoulding.com/</a></p>
+                        <p><a href="http://canvasrider.com/">http://canvasrider.com/</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>CSS3</h2>
+                    <ul>
+                        <li>border-radius, border-image, box-shadow</li>
+                        <li>text-shadow, word-wrap, font-face</li>
+                        <li>resize, box-sizing, column-width</li>
+                        <li>background-size, background</li>
+                        <li>font-face, media queries</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>font-face</h2>
+                        <pre><code>@font-face {
+    font-family: "JournalRegular";
+    src: url("journal-webfont.eot");
+    src: url("journal-webfont.eot?#iefix") format("embedded-opentype"),
+         url("journal-webfont.woff") format("woff"),
+         url("journal-webfont.ttf") format("truetype"),
+         url("journal-webfont.svg#JournalRegular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}</code></pre>
+                    </section>
+                    <section>
+                        <h2>font-face</h2>
+                        <ul>
+                            <li>large size</li>
+                            <li>license</li>
+                            <li>stange behaviour during loading</li>
+                            <li>bugs</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>font-face</h2>
+                        <p><a href="http://www.fontsquirrel.com/fontface/generator">Generator</a></p>
+                        <p><a href="http://fonts.philip.html5.org/">Optimizer</a></p>
+                        <p><a href="http://www.google.com/webfonts">http://www.google.com/webfonts</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Media queries</h2>
+                        <pre><code>@media screen {
+    * { 
+        font-family: sans-serif; 
+    }
+}</code></pre>
+                        <pre class="fragment"><code>@media screen and (min-width: 500px) { ... }</code></pre>
+                    </section>
+                    <section>
+                        <h2>Media queries</h2>
+                        <pre><code>@media all and (orientation: portrait) { ... }
+@media screen and (color) { ... }
+@media screen and (min-width: 600px) and (max-width: 900px) { ... }
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Media queries</h2>
+                        <p><a href="http://mediaqueri.es/">http://mediaqueri.es/</a></p>
+                        <p><a href="http://colly.com/">http://colly.com/</a></p>
+                    </section>
+                </section>
+
+                <section>
+                    <h2>JS APIs</h2>
+                    <img src="files/javascript_logo.jpg" alt="">
+                </section>
+
+                <section>
+                    <h2>Web Storage</h2>
+                    <pre><code>// content is available in scope of a page session
+sessionStorage.setItem('username', 'Batman');
+
+// content will be available after browser reload
+localStorage.setItem('timestamp', (new Date()).getTime());</code></pre>
+                    <p>Support: IE8+, FF3.5+, Safari4+, Chrome5+, Opera10.5+</p>
+                </section>
+                    
+                <section>
+                    <h2>WebSQL</h2>
+                    <pre><code>var db = openDatabase('todos', '0.1', 'To-do items.', 5 * 1024 * 1024);
+if (db) {
+    db.transaction(function(tx) {
+        tx.executeSql('SELECT COUNT(*) FROM Todos', 
+                        [], 
+                        function(result) {}, 
+                        function(tx, error) {});
+    });
+} else {
+    alert('Could not connect to databse.');
+}</code></pre>
+                    <p>Support: Chrome4+, Safari3.1+, Opera10.5+</p>
+                </section>
+                    
+                <section>
+                    <h2>IndexedDB</h2>
+                    <pre><code>var request = indexedDB.open('todos');
+request.onsuccess = function() {
+    var db = event.srcElement.result;
+    var transaction = db.transaction([], IDBTransaction.READ_ONLY);
+    var cursorRequest = transaction.objectStore('todos').openCursor();
+    cursorRequest.onsuccess = function() {
+        // ...
+    };
+};</code></pre>
+                    <p>Support: IE10+, FF4+, Chrome11+</p>
+                </section>
+
+                <section>
+                    <h2>AppCache</h2>
+                    <pre><code>CACHE MANIFEST
+
+CACHE:
+style.css
+script.js
+index.htm
+
+NETWORK:
+style2.css
+
+FALLBACK:
+image1.png not_available.png</code></pre>
+                    <p>Support: IE10+, FF3.5+, Chrome 4+, Safari4+, Opera10.6+</p>
+                </section>
+
+                <section>
+                    <h2>Web Workers</h2>
+                    <pre><code>var worker = new Worker('task.js');
+worker.onmessage = function(event) {
+    // ...
+};
+worker.postMessage('');</code></pre>
+                    <p><a href="http://people.mozilla.com/~prouget/demos/worker_and_simulatedannealing/index.xhtml">Sample</a></p>
+                    <p>Support: IE10+, FF3.5+, Chrome5+, Safari5+, Opera10.6+</p>
+                </section>
+
+                <section>
+                    <h2>Web Sockets</h2>
+                    <pre><code>var socket = new WebSocket('ws://url');
+socket.onopen = function(event) {
+    socket.send('Oppa Gangnam Style!');
+};
+socket.onmessage = function(event) { alert(event.data); }
+socket.onclose = function(event) { alert('Oppa...'); }</code></pre>
+                    <p>Support: IE10+, FF4+, Chrome4+, Safari5+, Opera10.7+</p>
+                </section>
+
+                <section>
+                    <h2>Geolocation</h2>
+                    <pre><code>navigator.geolocation.getCurrentPosition(function(position) {
+    // ...
+});</code></pre>
+                    <p>Support: IE9+, FF3.5+, Chrome5+. Safari5+, Opera10.6+</p>
+                </section>
+
+                <section>
+                    <h2>History API</h2>
+                    <pre><code>history.pushState({}, 'Awesome Page', '/page');
+window.addEventListener('popstate', function() {
+    // ...
+});</code></pre>
+                    <p>Support: IE10+, FF4+, Chrome5+, Safari5+, Opera11.5+</p>
+                </section>
+
+                <section>
+                    <h1>Thanks!</h1>
+                    <h3>Questions?</h3>
+                    <p>email: <a href="mailto:e.leychenok@gmail.com">e.leychenok@gmail.com</a></p>
+                    <p>skype: <a href="callto://e.leychenok">e.leychenok</a></p>
+                    <p>twitter: <a href="https://twitter.com/yleichanok">https://twitter.com/yleichanok</a></p>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

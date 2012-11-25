@@ -40,7 +40,7 @@
                         <img src="files/html5_rocks.png" alt="">
                     </h3>
                     <p>
-                        <small>Евгений Лейченок, 10 ноября 2012</small>
+                        <small>Евгений Лейченок, 26 ноября 2012</small>
                     </p>
                 </section>
 
@@ -52,9 +52,7 @@
                         <li>Синтаксис, доктайп. Новая разметка</li>
                         <li>Новые input-ы и атрибуты для них</li>
                         <li>Audio, video, canvas</li>
-                        <li>Microdata, ARIA</li>
                         <li>Новые плюшки CSS3</li>
-                        <li>Препроцессоры</li>
                         <li>JS APIs</li>
                     </ul>
                 </section>
@@ -397,7 +395,11 @@
     &lt;source src="movie.ogg" type="video/ogg" media="screen and (min-width:320px)"&gt;
     Your browser does not support the video tag.
 &lt;/video&gt;</code></pre>
-                        <video poster="http://cdnbakmi.kaltura.com/p/243342/sp/24334200/thumbnail/entry_id/0_ntovmku5/version/100004/width/480/height/302" class="persistentNativePlayer nativeEmbedPlayerPid" src="http://cdnapi.kaltura.com/p/243342/sp/24334200/playManifest/entryId/0_ntovmku5/flavorId/0_yiep8zj7/format/url/protocol/http/a.webm?ks=NTJmMDM3NjRlYzJiMWUwYTQ2YWU1MmU4YzRkY2EyZjRiNzlmNjEyZXwyNDMzNDI7MjQzMzQyOzEzNTM1OTcwMTQ7MDsxMzUzNTEwNjE0Ljg1MzswO3ZpZXc6Kix3aWRnZXQ6MTs7&amp;referrer=aHR0cDovL2h0bWw1dmlkZW8ub3Jn" controls>
+                        <video width="390" controls>
+                            <source type="video/webm; codecs=&quot;vp8, vorbis&quot;" src="files/chrome_japan.webm"></source>
+                            <source type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;" src="files/chrome_japan.mp4"></source>
+                            <source type="video/ogg; codecs=&quot;theora, vorbis&quot;" src="files/chrome_japan.ogv"></source>
+                            Your browser does not support the video tag.
                         </video>
                     </section>
                     <section>
@@ -576,6 +578,23 @@ socket.onopen = function(event) {
 socket.onmessage = function(event) { alert(event.data); }
 socket.onclose = function(event) { alert('Oppa...'); }</code></pre>
                     <p>Поддержка: IE10+, FF4+, Chrome4+, Safari5+, Opera10.7+</p>
+                </section>
+
+                <section>
+                    <h2>Geolocation</h2>
+                    <pre><code>navigator.geolocation.getCurrentPosition(function(position) {
+    // ...
+});</code></pre>
+                    <p>Поддержка: IE9+, FF3.5+, Chrome5+. Safari5+, Opera10.6+</p>
+                </section>
+
+                <section>
+                    <h2>History API</h2>
+                    <pre><code>history.pushState({}, 'Awesome Page', '/page');
+window.addEventListener('popstate', function() {
+    // ...
+});</code></pre>
+                    <p>Поддержка: IE10+, FF4+, Chrome5+, Safari5+, Opera11.5+</p>
                 </section>
 
                 <section>
