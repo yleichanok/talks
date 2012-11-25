@@ -172,7 +172,7 @@
                     <h2>Semantics & Markup</h2>
                     <p>&lt;!doctype html&gt;</p>
                     <p class="fragment">&lt;meta charset=utf-8&gt;</p>
-                    <pre class="fragment"><code style="font-size: 20px; margin-top: 20px;">&lt;!doctype html&gt;
+                    <pre class="fragment"><code>&lt;!doctype html&gt;
 &lt;meta charset=utf-8&gt;
 &lt;title&gt;My awesome page&lt;/title&gt;
 &lt;div&gt;My awesome content...&lt;/div&gt;</code></pre>
@@ -197,7 +197,7 @@
 
                 <section>
                     <h2>Шаблон</h2>
-                    <pre><code style="font-size: 20px; margin-top: 20px;">&lt;div id="header"&gt;&lt;/div&gt;
+                    <pre><code>&lt;div id="header"&gt;&lt;/div&gt;
 &lt;div id="sidebar"&gt;&lt;/div&gt;
 &lt;div class="post"&gt;&lt;/div&gt;
 &lt;div class="post"&gt;&lt;/div&gt;
@@ -206,7 +206,7 @@
 
                 <section>
                     <h2>HTML5 шаблон</h2>
-                    <pre><code style="font-size: 20px; margin-top: 20px;">&lt;header&gt;&lt;/header&gt;
+                    <pre><code>&lt;header&gt;&lt;/header&gt;
 &lt;nav&gt;&lt;/nav&gt;
 &lt;article&gt;&lt;article&gt;
 &lt;article&gt;&lt;article&gt;
@@ -216,7 +216,7 @@
 
                 <section>
                     <h2>HTML5 шаблон</h2>
-                    <pre><code style="font-size: 20px; margin-top: 20px;">&lt;header&gt;&lt;h1&gt;My awesome template&lt;/h1&gt;&lt;/header&gt;
+                    <pre><code>&lt;header&gt;&lt;h1&gt;My awesome template&lt;/h1&gt;&lt;/header&gt;
 &lt;nav&gt;
     &lt;h2&gt;Menu&lt;/h2&gt;
     &lt;ul&gt;
@@ -243,14 +243,14 @@
                     <section>
                         <h2>hgroup</h2>
                         <img src="files/hgroup.jpg" alt="">
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;hgroup&gt;
+                        <pre><code>&lt;hgroup&gt;
     &lt;h1&gt;Header&lt;/h1&gt;
     &lt;h2&gt;Slogan&lt;/h2&gt;
 &lt;/hgroup&gt;</code></pre>
                     </section>
                     <section>
                         <h2>nav</h2>
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;nav&gt;
+                        <pre><code>&lt;nav&gt;
     &lt;ul&gt;
         &lt;li&gt;...&lt;/li&gt;
     &lt;/ul&gt;
@@ -263,7 +263,7 @@
                     </section>
                     <section>
                         <h2>section, article</h2>
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;article&gt;
+                        <pre><code>&lt;article&gt;
     &lt;h3&gt;Title&lt;/h3&gt;
     &lt;p&gt;Content...&lt;/p&gt;
 &lt;/article&gt;
@@ -276,7 +276,7 @@
                     <section>
                         <h2>figure</h2>
                         <img src="files/figure.png" alt="">
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;figure&gt;
+                        <pre><code>&lt;figure&gt;
     &lt;img src="" alt=""&gt;
     &lt;figcaption&gt;Description&lt;/figcaption&gt;
 &lt;/figure&gt;
@@ -354,14 +354,14 @@
                     <section>
                         <h2>Пару примеров</h2>
                         <img src="files/placeholder.png" alt="">
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;form&gt;
+                        <pre><code>&lt;form&gt;
     &lt;input type="text" placeholder="I will dissapear when you click me"&gt;
 &lt;/form&gt;</code></pre>
                     </section>
                     <section>
                         <h2>Пару примеров</h2>
                         <img src="files/list.png" alt="">
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;form&gt;
+                        <pre><code>&lt;form&gt;
     &lt;input type="text" list="browsers"&gt;
     &lt;datalist id="browsers"&gt;
         &lt;option value="Firefox"&gt;
@@ -374,7 +374,7 @@
                     <section>
                         <h2>Пару примеров</h2>
                         <img src="files/require.png" alt="">
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;form&gt;
+                        <pre><code>&lt;form&gt;
     &lt;input type="text" required&gt;
 &lt;/form&gt;</code></pre>
                     </section>
@@ -392,7 +392,7 @@
                 <section>
                     <section>
                         <h2>Video, audio</h2>
-                        <pre><code style="font-size: 20px; margin-top: 20px;">&lt;video poster="image.jpg" controls autoplay preload loop&gt;
+                        <pre><code>&lt;video poster="image.jpg" controls autoplay preload loop&gt;
     &lt;source src="movie.mp4" type="video/mp4"&gt;
     &lt;source src="movie.ogg" type="video/ogg" media="screen and (min-width:320px)"&gt;
     Your browser does not support the video tag.
@@ -414,7 +414,7 @@
                 <section>
                     <section>
                         <h2>Canvas</h2>
-                        <pre><code style="font-size: 20px; margin-top: 20px;">var canvas = document.getElementById('sample');
+                        <pre><code>var canvas = document.getElementById('sample');
 var context = canvas.getContext('2d');
 context.fillStyle = '#FF0000';
 context.fillRect(0, 0, 150, 75);</code></pre>
@@ -442,7 +442,7 @@ context.fillRect(0, 0, 150, 75);</code></pre>
                 <section>
                     <section>
                         <h2>font-face</h2>
-                        <pre><code style="font-size: 20px; margin-top: 20px;">@font-face {
+                        <pre><code>@font-face {
     font-family: "JournalRegular";
     src: url("journal-webfont.eot");
     src: url("journal-webfont.eot?#iefix") format("embedded-opentype"),
@@ -494,7 +494,78 @@ context.fillRect(0, 0, 150, 75);</code></pre>
                     </section>
                 </section>
 
-                
+                <section>
+                    <h2>JS APIs</h2>
+                    <img src="files/javascript_logo.jpg" alt="">
+                </section>
+
+                <section>
+                    <h2>Web Storage</h2>
+                    <pre><code>// контент будет доступен в рамках одной сессии
+sessionStorage.setItem('username', 'Batman');
+
+// контент будет доступен после перезагрузки браузера
+localStorage.setItem('timestamp', (new Date()).getTime());</code></pre>
+                    <p>Поддержка: IE8+, FF3.5+, Safari4+, Chrome5+, Opera10.5+</p>
+                </section>
+                    
+                <section>
+                    <h2>WebSQL</h2>
+                    <pre><code>var db = openDatabase('todos', '0.1', 'To-do items.', 5 * 1024 * 1024);
+if (db) {
+    db.transaction(function(tx) {
+        tx.executeSql('SELECT COUNT(*) FROM Todos', 
+                        [], 
+                        function(result) {}, 
+                        function(tx, error) {});
+    });
+} else {
+    alert('Could not connect to databse.');
+}</code></pre>
+                    <p>Поддержка: Chrome4+, Safari3.1+, Opera10.5+</p>
+                </section>
+                    
+                <section>
+                    <h2>IndexedDB</h2>
+                    <pre><code>var request = indexedDB.open('todos');
+request.onsuccess = function() {
+    var db = event.srcElement.result;
+    var transaction = db.transaction([], IDBTransaction.READ_ONLY);
+    var cursorRequest = transaction.objectStore('todos').openCursor();
+    cursorRequest.onsuccess = function() {
+        // ...
+    };
+};</code></pre>
+                    <p>Поддержка: IE10+, FF4+, Chrome11+</p>
+                </section>
+
+                <section>
+                    <h2>AppCache</h2>
+                    <pre><code>CACHE MANIFEST
+
+CACHE:
+style.css
+script.js
+index.htm
+
+NETWORK:
+style2.css
+
+FALLBACK:
+image1.png not_available.png</code></pre>
+                    <p>Поддержка: IE10+, FF3.5+, Chrome 4+, Safari4+, Opera10.6+</p>
+                </section>
+
+                <section>
+                    <h2>Web Workers</h2>
+                    <pre><code>var worker = new Worker('task.js');
+worker.onmessage = function(event) {
+    // ...
+};
+worker.postMessage('');</code></pre>
+                    <p><a href="http://people.mozilla.com/~prouget/demos/worker_and_simulatedannealing/index.xhtml">Sample</a></p>
+                    <p>Поддержка: IE10+, FF3.5+, Chrome5+, Safari5+, Opera10.6+</p>
+                </section>
 
                 <section>
                     <h1>Спасибо!</h1>
