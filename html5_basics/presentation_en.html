@@ -205,9 +205,9 @@
                     <h2>HTML5 Layout</h2>
                     <pre><code>&lt;header&gt;&lt;/header&gt;
 &lt;nav&gt;&lt;/nav&gt;
-&lt;article&gt;&lt;article&gt;
-&lt;article&gt;&lt;article&gt;
-&lt;footer&gt;&lt;footer&gt;</code></pre>
+&lt;article&gt;&lt;/article&gt;
+&lt;article&gt;&lt;/article&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
                     <img src="files/done.jpg" alt="" class="fragment">
                 </section>
 
@@ -224,12 +224,12 @@
 &lt;article&gt;
     &lt;h3&gt;First article&lt;/h3&gt;
     &lt;div&gt;&lt;/div&gt;
-&lt;article&gt;
+&lt;/article&gt;
 &lt;article&gt;
     &lt;h3&gt;Second article&lt;/h3&gt;
     &lt;div&gt;&lt;/div&gt;
-&lt;article&gt;
-&lt;footer&gt;&lt;footer&gt;</code></pre>
+&lt;/article&gt;
+&lt;footer&gt;&lt;/footer&gt;</code></pre>
                 </section>
 
                 <section>
@@ -391,7 +391,8 @@
                         <h2>Video, audio</h2>
                         <pre><code>&lt;video poster="image.jpg" controls autoplay preload loop&gt;
     &lt;source src="movie.mp4" type="video/mp4"&gt;
-    &lt;source src="movie.ogg" type="video/ogg" media="screen and (min-width:320px)"&gt;
+    &lt;source src="movie.ogg" type="video/ogg" 
+			media="screen and (min-width:320px)"&gt;
     Your browser does not support the video tag.
 &lt;/video&gt;</code></pre>
                         <video width="390" controls>
@@ -440,6 +441,43 @@ context.fillRect(0, 0, 150, 75);</code></pre>
                     </ul>
                 </section>
 
+                <section>
+                    <section>
+						<h2>CSS3</h2>
+						<pre><code>background-color: #FFF;
+// FF 3.6+
+background-image: -moz-linear-gradient(left, #FFF, #000);
+// Safari 4+, Chrome 2+
+background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#FFF), to(#000));
+// Safari 5.1+, Chrome 10+
+background-image: -webkit-linear-gradient(left, #FFF, #000);
+// Opera 11.10
+background-image: -o-linear-gradient(left, #FFF, #000);
+// Standard, IE10
+background-image: linear-gradient(to right, #FFF, #000);
+background-repeat: repeat-x;
+// IE9 and down
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#000000', GradientType=1);</code></pre>
+					</section>
+					<section>
+						<h2>Preprocessors‹</h2>
+						<ul>
+							<li>SASS/SCSS</li>
+							<li>LESS</li>
+							<li>Stylus</li>
+						</ul>
+						<pre><code>.border-radius (@radius: 5px) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+#header {
+    .border-radius;
+}</code></pre>
+					</section>
+				</section>
+				
                 <section>
                     <section>
                         <h2>font-face</h2>
@@ -599,7 +637,7 @@ window.addEventListener('popstate', function() {
                 <section>
                     <h1>Thanks!</h1>
                     <h3>Questions?</h3>
-                    <p>email: <a href="mailto:e.leychenok@gmail.com">e.leychenok@gmail.com</a></p>
+                    <p>email: <a href="mailto:e.leychenok@itransition.com">e.leychenok@itransition.com</a></p>
                     <p>skype: <a href="callto://e.leychenok">e.leychenok</a></p>
                     <p>twitter: <a href="https://twitter.com/yleichanok">https://twitter.com/yleichanok</a></p>
                 </section>
