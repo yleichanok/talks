@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Fast Websites</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen.css">
+	<!--
+	To apply styles to the certain slides
+	set slide ID to get needed elements
+	-->
+	<style>
+		#Cover h2 {
+			margin: 30px 0 0;
+			color: #FFF;
+			text-align: center;
+			font-size: 70px;
+		}
+		#Cover p {
+			margin: 10px 0 0;
+			text-align: center;
+			color: #FFF;
+			font-style: italic;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Fast Websites</h1>
+		<p>Евгений Лейченок, 21 мая 2013</p>
+	</header>
+	<section class="slide cover" id="Cover"><div>
+		<h2>Fast Websites</h2>
+		<p>Евгений Лейченок, 21 мая 2013</p>
+		<img src="pictures/cover.jpg" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Задача</h2>
+		<ol>
+			<li>Пользователь должен тратить меньше времени на ожидание, чем сейчас</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>А зачем это нужно?</h2>
+		<ol>
+			<li>Чем быстрее пользователь начнёт работу - тем лучше</li>
+			<li class="next">Каждый запрос - DNS lookup + HTTP request + headers + 4J <a href="http://estelle.github.io/jsframeworks/">[*]</a></li>
+			<li class="next">Каждая секунда ожидания уменьшает потенциальные продажи <a href="http://www.svennerberg.com/2008/12/page-load-times-vs-conversion-rates/">[*]</a></li>
+			<li class="next">Google, скорость загрузки страниц и SEO <a href="http://blog.kissmetrics.com/speed-is-a-killer/">[*]</a></li>
+		</ol>
+		<p class="note"><a href="http://www.gomez.com/pdfs/wp_why_web_performance_matters.pdf">http://www.gomez.com/pdfs/wp_why_web_performance_matters.pdf</a></p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>А чем мы можем помочь?</h2>
+		<figure>
+			<blockquote><p>80-90% of the end-user response time is spent on the frontend. Start there.</p></blockquote>
+			<figcaption>Steve Souders, <a href="http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/">http://www.stevesouders.com/blog/2012/02/10/the-performance-golden-rule/</a></figcaption>
+		</figure>
+	</div></section>
+	<section class="slide"><div>
+		<h2>А что почитать?</h2>
+		<ul>
+			<li><a href="http://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309">Steve Souders "High Performance Web Sites"</a></li>
+			<li><a href="http://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304">Steve Souders "Even Faster Web Sites"</a></li>
+			<li><a href="http://www.amazon.com/Web-Performance-Daybook-Stoyan-Stefanov/dp/1449332919">Stoyan Stefanov "Web Performance Daybook Volume 2"</a></li>
+			<li><a href="http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X/ref=pd_sim_b_12">Nicholas Zakas "High Performance JavaScript"</a></li>
+		</ul>
+	</div></section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2013 Yauheni Leichanok -->
+</body>
+</html>
