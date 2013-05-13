@@ -11,18 +11,27 @@
 	set slide ID to get needed elements
 	-->
 	<style>
-		#Cover h2 {
-			margin: 30px 0 0;
-			color: #FFF;
+		.cover h2 {
+			margin: 80px 0 0;
 			text-align: center;
 			font-size: 70px;
 		}
-		#Cover p {
+		.cover p {
 			margin: 10px 0 0;
 			text-align: center;
-			color: #FFF;
 			font-style: italic;
 			font-size: 20px;
+		}
+
+		#cover h2 {
+			color: #FFF;
+		}
+		#cover p {
+			color: #FFF;
+		}
+
+		#rules h2 {
+			 color: #000;
 		}
 	</style>
 </head>
@@ -31,7 +40,7 @@
 		<h1>Fast Websites</h1>
 		<p>Евгений Лейченок, 21 мая 2013</p>
 	</header>
-	<section class="slide cover" id="Cover"><div>
+	<section class="slide cover" id="cover"><div>
 		<h2>Fast Websites</h2>
 		<p>Евгений Лейченок, 21 мая 2013</p>
 		<img src="pictures/cover.jpg" alt="">
@@ -67,6 +76,35 @@
 			<li><a href="http://www.amazon.com/Web-Performance-Daybook-Stoyan-Stefanov/dp/1449332919">Stoyan Stefanov "Web Performance Daybook Volume 2"</a></li>
 			<li><a href="http://www.amazon.com/Performance-JavaScript-Faster-Application-Interfaces/dp/059680279X/ref=pd_sim_b_12">Nicholas Zakas "High Performance JavaScript"</a></li>
 		</ul>
+	</div></section>
+	<section class="slide cover" id="rules">
+		<h2>14 правил от Steve Souders</h2>
+		<p><a href="http://stevesouders.com/hpws/rules.php">http://stevesouders.com/hpws/rules.php</a></p>
+		<img src="pictures/rules.jpg" alt="">
+	</section>
+	<section class="slide"><div>
+		<h2>14 правил от Steve Souders...</h2>
+		<ol>
+			<li>Make Fewer HTTP Requests</li>
+			<li>Use a Content Delivery Network</li>
+			<li>Add an Expires Header</li>
+			<li>Gzip Components</li>
+			<li>Put Stylesheets at the Top</li>
+			<li>Put Scripts at the Bottom</li>
+			<li>Avoid CSS Expressions</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>...14 правил от Steve Souders</h2>
+		<ol type="1" start="7">
+			<li style="counter-increment: list 7 1;">Make JavaScript and CSS External</li>
+			<li>Reduce DNS Lookups</li>
+			<li>Minify JavaScript</li>
+			<li>Avoid Redirects</li>
+			<li>Remove Duplicated Scripts</li>
+			<li>Configure ETags</li>
+			<li>Make AJAX Cacheable</li>
+		</ol>
 	</div></section>
 	<!--
 		To hide progress bar from entire presentation
